@@ -4,7 +4,7 @@
 </div>
  
   <div class="chat chat-start">
-  <div class="chat-bubble chat-bubble-neutral">  <%= message.body %></div>
+  <div class="chat-bubble chat-bubble-neutral <%= random_color %>">  <%= message.body %></div>
   <%= message.created_at.in_time_zone.strftime("%I:%M%P, %B %Y") %>
 
   

@@ -65,3 +65,7 @@ group :test do
 end
 
 gem "hotwire-livereload", "~> 2.0", :group => :development
+
+gem "devise", "~> 4.9"
+
+gem "tailwind_devise", "~> 0.0.3"
