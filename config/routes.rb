@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
 
-
   resources :servers do
-    scope module: :servers do 
-    resources :channels
-  end
-  end
+    scope module: :servers do
+      resources :channels
 
-  resources :servers
+        end
+      end
+
   devise_for :users
   
   resources :chats do 
