@@ -1,10 +1,11 @@
 <% content_for :title, "New channel" %>
  <%= turbo_frame_tag :dashboard do  %>
-<div class="md:w-2/3 w-full">
+  <div class="w-full flex justify-center pt-24">
+  <div class="max-w-2xl w-full bg-gray-600 p-4 rounded-lg">
   <h1 class="font-bold text-4xl">New channel</h1>
 
   <%= render "form", server_channel: @server_channel %>
-
-  <%= link_to "Cancel", root_path, class: "w-full sm:w-auto text-center mt-2 sm:mt-0 sm:ml-2 rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
+  <%= link_to "Cancel", @server  ,  class: "w-full sm:w-auto text-center mt-2 sm:mt-0 sm:ml-2 rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
+</div>
 </div>
  <% end  %>
