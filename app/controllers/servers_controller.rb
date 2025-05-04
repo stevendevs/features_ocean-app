@@ -23,25 +23,19 @@ class ServersController < ApplicationController
   def create
     @server = current_user.owned_servers.new(server_params)
 
-      if @server.save
-redirect_to root_path
-      else
-  render :new, status: :unprocessable_entity
-
-      end
-  
+    if @server.save
+      redirect_to root_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   # PATCH/PUT /servers/1 or /servers/1.json
   def update
-    respond_to do |format|
-      if @server.update(server_params)
-        format.html { redirect_to @server, notice: "Server was successfully updated." }
-        format.json { render :show, status: :ok, location: @server }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @server.errors, status: :unprocessable_entity }
-      end
+    if @server.update(server_params)
+      redirect_to @server, notice: "Server was successfully updated."
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -63,6 +57,7 @@ redirect_to root_path
 
     # Only allow a list of trusted parameters through.
     def server_params
-      params.expect(server: [ :name, :owner_id ])
+      params.expect(server: [ :name, :image ])
     end
-end
+
+  end
